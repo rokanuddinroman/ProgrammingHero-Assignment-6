@@ -30,3 +30,15 @@ body{
 .search-btn:hover{
     background-color: #f3f3f3;
 }
+.spec-img{
+    width: 100% !important;
+}
+.spec-btn{
+    width: 100%;
+    border: 0px;
+    color:#ffffff;
+    background-color: #0077ED;
+    border-radius: 6px;
+    padding: 8px 0px;
+    font-weight: 600;
+}
