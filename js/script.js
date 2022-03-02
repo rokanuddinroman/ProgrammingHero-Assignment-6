@@ -68,7 +68,7 @@ const displayPhoneSpecs = phone => {
       <div class="card-body">
       <p class="card-text"><small class="text-muted">${phone.brand}</small></p>
         <h5 class="card-title">${phone.name}</h5>
-        <p class="card-text"><small class="text-muted">Release Date : ${phone.releaseDate}</small></p>
+        <p class="card-text"><small class="text-muted">Release Date : ${phone.releaseDate ? phone.releaseDate : 'Not Enough Info'}</small></p>
         <h5>Main Features</h5>
         <p class="card-text">
         <span><b>Chipset :</b> ${phone.mainFeatures.chipSet}</span><br>
@@ -80,12 +80,12 @@ const displayPhoneSpecs = phone => {
         </p>
         <h5>Other Features</h5>
         <p class="card-text">
-        <span><b>Bluetooth :</b> ${phone?.others?.Bluetooth}</span> <br>
-  <span><b>GPS :</b> ${phone?.others?.GPS}</span><br>
-    <span><b>NFC :</b> ${phone?.others?.NFC}</span><br>
-      <span><b>Radio :</b> ${phone?.others?.Radio}</span><br>
-        <span><b>USB :</b> ${phone?.others?.USB}</span><br>
-          <span><b>WLAN :</b> ${phone?.others?.WLAN}</span>
+        <span><b>Bluetooth :</b> ${phone?.others?.Bluetooth ? phone?.others?.Bluetooth : 'No Bluetooth'}</span> <br>
+  <span><b>GPS :</b> ${phone?.others?.GPS ? phone?.others?.GPS : 'No GPS Found'}</span><br>
+    <span><b>NFC :</b> ${phone?.others?.NFC ? phone?.others?.NFC : 'No NFC'}</span><br>
+      <span><b>Radio :</b> ${phone?.others?.Radio ? phone?.others?.Radio : 'No Radio'}</span><br>
+        <span><b>USB :</b> ${phone?.others?.USB ? phone?.others?.USB : 'No USB'}</span><br>
+          <span><b>WLAN :</b> ${phone?.others?.WLAN ? phone?.others?.WLAN : 'No WLAN'}</span>
         </p>
       </div>
     </div>
