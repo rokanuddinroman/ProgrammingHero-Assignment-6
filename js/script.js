@@ -2,9 +2,9 @@ const searchPhone = () => {
   const searchField = document.getElementById('searchField');
   const searchText = searchField.value;
   searchField.value = '';
-  if (!isNaN(searchText)) {
-    alert('Enter Phone Names');
-  }
+  // if (!isNaN(searchText)) {
+  //   alert('Enter Phone Names');
+  // }
   const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
   fetch(url)
     .then(res => res.json())
@@ -13,9 +13,11 @@ const searchPhone = () => {
 const displaySearchResult = phones => {
 
 
-  if (phones.length == 0) {
-    alert('Your Device is not Available')
-  }
+  // if (phones.length == 0) {
+  //   const alert1 = document.createElement('p');
+  //   alert1.innerText = 'Enter valid phone name';
+  //   phoneDetail.appendChild(alert1);
+  // }
 
   // clear detail after search 
   const phoneDetail = document.getElementById('phoneDetail');
@@ -24,6 +26,11 @@ const displaySearchResult = phones => {
   const searchResult = document.getElementById('search-result');
   searchResult.textContent = '';
 
+  if (phones.length == 0) {
+    const alert1 = document.createElement('p');
+    alert1.innerText = 'Enter valid phone name';
+    phoneDetail.appendChild(alert1);
+  }
 
   phones.forEach(phone => {
     // console.log(phone)
