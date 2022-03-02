@@ -27,3 +27,6 @@ body{
     color:#0077ED;
     box-shadow: 0px 16px 32px rgba(0, 89, 255, 0.244);
 }
+.search-btn:hover{
+    background-color: #f3f3f3;
+}
