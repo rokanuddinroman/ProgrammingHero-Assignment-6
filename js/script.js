@@ -11,12 +11,20 @@ const searchPhone = () => {
     .then(data => displaySearchResult(data.data))
 }
 const displaySearchResult = phones => {
+
+
+  if (phones.length == 0) {
+    alert('Your Device is not Available')
+  }
+
   // clear detail after search 
   const phoneDetail = document.getElementById('phoneDetail');
   phoneDetail.textContent = '';
   // main 
   const searchResult = document.getElementById('search-result');
   searchResult.textContent = '';
+
+
   phones.forEach(phone => {
     // console.log(phone)
     const div = document.createElement('div');
