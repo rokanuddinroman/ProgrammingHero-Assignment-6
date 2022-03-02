@@ -2,6 +2,9 @@ const searchPhone = () => {
     const searchField = document.getElementById('searchField');
     const searchText = searchField.value;
     searchField.value = '';
+    if (!isNaN(searchText)) {
+        alert('Enter Phone Names');
+    }
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
@@ -46,8 +49,8 @@ const displayPhoneSpecs = phone => {
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-  <div class="row g-0 mt-4">
-    <div class="col-md-4 pt-4 ps-4 pb-4">
+  <div class="row g-0">
+    <div class="col-md-4 pt-4 ps-4 pb-4 pe-4">
       <img src="${phone.image}" class="img-fluid rounded-start spec-img" alt="...">
     </div>
     <div class="col-md-8">
@@ -64,6 +67,14 @@ const displayPhoneSpecs = phone => {
         <span><b>Chipset :</b> ${phone.mainFeatures.chipSet}</span>
         </p>
         <h5>Other Features</h5>
+        <p class="card-text">
+        <span><b>Bluetooth :</b> ${phone.others.Bluetooth}</span><br>
+        <span><b>GPS :</b> ${phone.others.GPS}</span><br>
+        <span><b>NFC :</b> ${phone.others.NFC}</span><br>
+        <span><b>Radio :</b> ${phone.others.Radio}</span><br>
+        <span><b>USB :</b> ${phone.others.USB}</span><br>
+        <span><b>WLAN :</b> ${phone.others.WLAN}</span>
+        </p>
       </div>
     </div>
   </div>
